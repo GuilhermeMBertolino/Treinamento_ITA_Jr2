@@ -1,0 +1,81 @@
+.Navbar
+{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    background-color: #DF5616;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+}
+
+.Navbar div
+{
+    display: flex;
+}
+
+.Logo
+{
+    padding: 0 3vw;
+    color: #FFF;
+    align-self: center;
+    font-size: 2rem;
+}
+
+.Navbar nav ul
+{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    width: 50vw;
+}
+
+.Navbar nav ul li
+{
+    font-size: 1.2rem;
+    flex-grow: 1;
+    height: 100%;
+    align-self: center;
+    display: flex;
+}
+
+.Navbar nav li a
+{
+    text-decoration: none;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Navbar nav li a:hover
+{
+    background-color: #00000040;
+}
+
+.Navbar nav li a h4
+{
+    color: #FFF;
+}
+
+@media(max-width: 300px)
+{
+    .Navbar
+    {
+        flex-direction: column;
+    }
+
+    nav
+    {
+        display: flex;
+    }
+
+    .Navbar ul
+    {
+        flex: 1;
+    }
+
+    .Logo
+    {
+        margin: auto;
+    }
+}

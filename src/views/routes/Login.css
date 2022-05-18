@@ -1,0 +1,142 @@
+.Login
+{
+    overflow: hidden;
+    border: solid 1px #D4D4D4;
+    border-radius: 10px;
+    box-shadow:  2px 2px 2px 2px rgba(0,0,0,0.88);
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    height: 18rem;
+    width: 20rem;
+    background-color: #181C25;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login_title
+{
+    justify-content: center;
+    color: #D4D4D4;
+    width: 100%;
+    display: flex;
+    background-color: #D4D4D4;
+}
+
+.login_title h2
+{
+    flex: 1;
+    height: 100%;
+    padding: 0.6rem;
+    color: #181C25;
+}
+
+.username
+{
+    display: flex;
+    flex-direction: column;
+    color: #D4D4D4;
+}
+
+.Login .input
+{
+    border-radius: 0.2rem;
+    width: 100%;
+}
+
+.Login input:focus
+{
+    outline: 0;
+    box-shadow: 0.5px 0.5px 0.2px 2px #000;
+}
+
+.Login input
+{
+    width: 70%;
+    height: 1.4rem;
+    background-color: #D4D4D4;
+    padding: 0.3rem;
+}
+
+.forgot_password
+{
+    display: block;
+    align-self: center;
+    text-decoration: none;
+    color: #D4D4D4;
+    font-size: 0.8rem;
+}
+
+.Login button
+{
+    width: 70%;
+    height: 2.0rem;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.88);
+    font-size: 1.0rem;
+    font-weight: bold;
+    display: flex;
+    border: 0.1px solid #D4D4D4;
+    border-radius: 3px;
+}
+
+.Login button a
+{
+    text-decoration: none;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login_btn
+{
+    background-color: rgb(5, 24, 58);
+    transition: 1s;
+}
+
+#login_btn:hover
+{
+    background-color: rgba(30, 50, 100, 0.7);
+}
+
+#login_btn a
+{
+    color: #D4D4D4;
+}
+
+#signup_btn
+{
+    margin-bottom: 1rem;
+    margin-top: 0.3rem;
+    background-color: #181C25;
+    transition: 0.5s;
+}
+
+#signup_btn:hover
+{
+    background-color: #D4D4D4;
+}
+
+#signup_btn a:hover
+{
+    color: #181C25;
+}
+
+#signup_btn a
+{
+    color: #D4D4D4;
+}
+
+.Login h5
+{
+    color: #FF0000;
+}
+
+@media(max-width: 350px)
+{
+    .Login
+    {
+        width: 90vw;
+    }
+}

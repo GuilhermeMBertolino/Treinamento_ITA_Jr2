@@ -1,0 +1,49 @@
+.About
+{
+    background-color: #181C25;
+    width: 30rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: solid 1px #D4D4D4;
+    overflow: hidden;
+}
+
+.About h2
+{
+    background-color: #D4D4D4;
+    color: #181C25;
+    padding: 0.5rem;
+}
+
+.About p
+{
+    padding: 0.5rem;
+    text-align: justify;
+    color: #D4D4D4;
+}
+
+.About p strong
+{
+    color: #DF5616;
+}
+
+.About .imgDiv
+{
+    padding: 0.4rem;
+    border: solid 1px #D4D4D4;
+    margin: 0.4rem;
+    width: 75%;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+}
+
+@media(max-width: 650px)
+{
+    .About
+    {
+        width: 80vw;
+    }
+}
+
