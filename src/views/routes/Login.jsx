@@ -1,13 +1,15 @@
 import "./Login.css"
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import users from "../../data/users.js";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
+import { AppContext } from "../../data/InfoContext";
 
 const Login = props => 
 {
-    const {autentication} = useParams(); 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const {setUser, autentication, setAutentication} = useContext(AppContext);
+
     const quandoMudarUser = (event) =>
     {
         setUsername(event.target.value);
@@ -16,6 +18,7 @@ const Login = props =>
     {
         setPassword(event.target.value);
     }
+
     const checarUsuario = () =>
     {
         return users.map((usuario) => 
@@ -32,12 +35,20 @@ const Login = props =>
                 <input type="password" value={password} placeholder="Senha" onChange={quandoMudarPassword} />
                 <a href="/" className="forgot_password">Esqueceu a senha?</a>
             </div>
-            <button id="login_btn">
-                <Link to={checarUsuario() ? `/home/${username}` : "/login/nao_autenticado"} href="#5" className="btn_link">
+            <button id="login_btn" 
+                onClick={() => 
+                    {
+                        if(checarUsuario()) 
+                            setUser(username);
+                        else
+                            setAutentication(false);
+                    }
+            }>
+                <Link to={checarUsuario() ? "/" : "/login"} className="btn_link">
                     <p>Fazer login</p>
                 </Link>
             </button>
-            {autentication === "nao_autenticado" ? <h5>Usuário ou senha incorretos!</h5> : <></>}
+            {!autentication ? <h5>Usuário ou senha incorretos!</h5> : <></>}
             <button id="signup_btn">
                 <a href="/" className="btn_link">
                     <p>Cadastrar-se</p>

@@ -52,6 +52,11 @@
     background-color: #00000040;
 }
 
+.Navbar nav li .leave
+{
+    border-left: solid 2px #D4D4D4;
+}
+
 .Navbar nav li a h4
 {
     color: #FFF;

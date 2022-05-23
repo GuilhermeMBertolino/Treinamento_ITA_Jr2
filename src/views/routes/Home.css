@@ -21,6 +21,41 @@
     color: #DF5616;
 }
 
+.Home p
+{
+    width: 70%;
+    margin: auto;
+    text-align: justify;
+    color: #D4D4D4;
+}
+
+.Home p strong
+{
+    color: #DF5616;
+}
+
+.membersbtn
+{
+    width: 70%;
+    padding: 0.3rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.2rem;
+    background-color: rgb(223, 86, 22);
+    border-radius: 10px;
+    border: solid 1px #D4D4D4;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.88);
+    transition: 0.5s;
+}
+
+.membersbtn:hover
+{
+    background-color: rgba(250, 120, 60, 0.88);
+}
+
 .Home .imgDiv
 {
     display: flex;

@@ -1,4 +1,3 @@
-import "./Content.css";
 import React from "react";
 import {Routes, Route} from "react-router-dom";
 
@@ -12,8 +11,6 @@ const Content = props =>
         <Routes>
             <Route path="/about" element={<About></About>}></Route>
             <Route path="/login" element={<Login></Login>}></Route>
-            <Route path="/login/:autentication" element={<Login></Login>}></Route>
-            <Route path="/home/:user" element={<Home></Home>}></Route>
             <Route path="/" element={<Home></Home>}></Route>
         </Routes>   
     </main>

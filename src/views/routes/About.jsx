@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import ImagemRede from "../../imagens/Imagem_rede.jpeg"
+import ImagemRede from "../../imagens/Imagem_rede.jpeg";
 
 const About = props => 
 (
@@ -13,7 +13,7 @@ const About = props =>
             não ficamos por aí. Você vai sim aprender a arrumar a
             internet da sua casa quando ela cair, mas a <strong>Rede_</strong> vai
             muito além disso. Aqui você aprederá a controlar
-            <strong>servidores e redes em geral</strong>, você também poderá
+            <strong> servidores e redes em geral</strong>, você também poderá
             participar dos grandes projetos que virão em 2022 e
             serão bem interessantes para colocar no seu currículo.
         </p>
