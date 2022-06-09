@@ -1,0 +1,61 @@
+.MemberArea
+{
+    background-color: #181C25;
+    width: 50rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: solid 1px #D4D4D4;
+    overflow: hidden;
+}
+
+.MemberArea h2
+{
+    background-color: #D4D4D4;
+    color: #181C25;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.MemberArea p
+{
+    color: #D4D4D4;
+    padding: 2rem;
+}
+
+.createTask
+{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    padding: 0.3rem;
+    border: 1px solid #D4D4D4;
+    border-radius: 10px;
+}
+
+.createTask button
+{
+    background-color: #DF5616;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #D4D4D4;
+    padding: 0.3rem;  
+}
+
+.createTask label
+{
+    color: #D4D4D4;
+    padding-top: 0.4rem;
+    font-weight: bold;
+}
+
+.createTask input
+{
+    width: 95%;
+    align-self: center;
+    height: 2rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+}

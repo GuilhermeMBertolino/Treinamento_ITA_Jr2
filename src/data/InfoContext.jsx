@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import users from "./users.js";
 
 const initialState =
 {
     user: null,
     autentication: true,
-    members: users
+    members: null,
+    tasks: null
 }
 
 export const AppContext = React.createContext(initialState);
 
 const InfoContext = (props) =>
 {
-    const [state, setState] = useState(initialState)
+    const [state, setState] = useState(initialState);
     function updateState(key, value)
     {
         setState({
@@ -25,6 +25,9 @@ const InfoContext = (props) =>
             user: state.user,
             autentication: state.autentication,
             members: state.members,
+            tasks: state.tasks,
+            setMembers: m => updateState("members", m),
+            setTasks: t => updateState("tasks", t),
             setUser: u => updateState("user", u),
             setAutentication: a => updateState("autentication", a)
         }}>

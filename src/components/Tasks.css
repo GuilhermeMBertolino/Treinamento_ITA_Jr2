@@ -1,0 +1,28 @@
+.task
+{
+    width: 70%;
+    border-radius: 10px;
+    background-color: #DF5616;
+    overflow: hidden;
+    border: 1px solid #D4D4D4;
+    margin: 1rem auto;
+}
+
+.task h2
+{
+    background-color: #D4D4D4;
+    padding: 0.2rem;
+}
+
+.task p
+{
+    text-align: justify;
+    color: #FFF;
+    padding: 0.1rem;
+}
+
+.task h4
+{
+    text-align: right;
+    padding: 0.1rem;
+}

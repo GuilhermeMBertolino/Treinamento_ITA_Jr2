@@ -20,6 +20,9 @@ const Navbar = props =>
                         <Link to="/about"><h4>Sobre</h4></Link>
                     </li>
                     <li>
+                        <Link to={user? "/memberArea" : "/login"}><h4>Área do membro</h4></Link>
+                    </li>
+                    <li>
                         {!user? <Link to="/login"><h4>Login</h4></Link>
                         : <Link className="leave" to="/" onClick={() => setUser(null)}><h4>Sair</h4></Link>}
                     </li>

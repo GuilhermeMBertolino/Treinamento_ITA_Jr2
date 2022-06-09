@@ -1,13 +1,14 @@
 import "./Login.css"
 import React, {useContext, useState} from "react";
-import users from "../../data/users.js";
 import {Link} from "react-router-dom";
 import { AppContext } from "../../data/InfoContext";
+import tryLogin from "../../functions/login.js";
 
 const Login = props => 
 {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [loginLink, setLoginLink] = useState("/login");
     const {setUser, autentication, setAutentication} = useContext(AppContext);
 
     const quandoMudarUser = (event) =>
@@ -18,12 +19,15 @@ const Login = props =>
     {
         setPassword(event.target.value);
     }
-
-    const checarUsuario = () =>
+    async function checarUsuario()
     {
-        return users.map((usuario) => 
-            usuario.nome === username && usuario.senha === password).reduce((a, b) => a || b);
+        let login = await tryLogin(username, password);
+        setAutentication(login);
+        if(login)
+            setUser(username);
+        setLoginLink(login ? "/memberArea" : "/login");
     }
+
 
     return (
         <div className="Login">
@@ -35,22 +39,14 @@ const Login = props =>
                 <input type="password" value={password} placeholder="Senha" onChange={quandoMudarPassword} />
                 <a href="/" className="forgot_password">Esqueceu a senha?</a>
             </div>
-            <button id="login_btn" 
-                onClick={() => 
-                    {
-                        if(checarUsuario()) 
-                            setUser(username);
-                        else
-                            setAutentication(false);
-                    }
-            }>
-                <Link to={checarUsuario() ? "/" : "/login"} className="btn_link">
+            <button id="login_btn" onClick={checarUsuario}>
+                <Link to={loginLink} className="btn_link">
                     <p>Fazer login</p>
                 </Link>
             </button>
             {!autentication ? <h5>Usuário ou senha incorretos!</h5> : <></>}
             <button id="signup_btn">
-                <a href="/" className="btn_link">
+                <a href="/signup" className="btn_link">
                     <p>Cadastrar-se</p>
                 </a>
             </button>

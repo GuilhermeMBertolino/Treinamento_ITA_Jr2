@@ -4,11 +4,27 @@ import MembrosRede from "../../imagens/Membros_rede_25.png";
 import BixosRede from "../../imagens/Imagem_rede.jpeg";
 import { AppContext } from "../../data/InfoContext";
 import Members from "../../components/Members.jsx";
+const axios = require("axios");
 
 const Home = props => 
 {
-    const {user, members} = useContext(AppContext);
+    let axiosConfig = 
+    {
+        headers:
+        {
+            Authorization: "Bearer "+ localStorage.getItem("token")
+        }
+    }
+    axios.get("http://localhost:4000/usuarios", axiosConfig).then(res => {
+        setMembers(res.data);
+    });
+    axios.get("http://localhost:4000/tarefas", axiosConfig).then(res => {
+        setTasks(res.data);
+    });
+
+    const {user, members, setMembers, setTasks} = useContext(AppContext);
     const [btnStatus, setBtnStatus] = useState(false);
+
     return (
         <div className="Home">
             <h2>Bem vindo a Rede_ <strong>{user || ""}</strong></h2>
@@ -24,9 +40,9 @@ const Home = props =>
                 participar dos grandes projetos que virão em 2022 e
                 serão bem interessantes para colocar no seu currículo.
             </p>
-            <button className="membersbtn" onClick={() => setBtnStatus(!btnStatus)}>
+            {user ? <button className="membersbtn" onClick={() => setBtnStatus(!btnStatus)}>
                 Nossos membros
-            </button>
+            </button> : <></>}
             {btnStatus ? <Members members={members}></Members> : <></>}
             <div className="imgDiv">
                 <div className="img">
